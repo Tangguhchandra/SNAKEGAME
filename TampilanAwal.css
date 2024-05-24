@@ -1,0 +1,255 @@
+.background-menu {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.background-option {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.background-option:hover {
+    background-color: #ddd;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Untuk mencegah scroll */
+    background-image: url(background1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    padding: 2px; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom: #65e2ae;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 20%;
+    border: px solid #ffffff;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    border: 3px solid #ffffff;
+    border-radius: 50px;
+    width: 30%; /* Atur lebar dengan persentase, misalnya 80% */
+    height: 200px;
+background-color: #8585854c;
+
+}
+
+.button {
+    padding: 10px 150px;
+    margin: 7px 10px;
+    background-color: #cdb030;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 9px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    border-bottom: #ffff00;
+    stroke: #000;
+}
+
+.button:hover {
+    color: #ffffff;
+    background-color: #a2820e;
+}
+
+.setting-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.settings-button {
+    padding: 15px 15px;
+    font-size: 30px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(18, 2, 2, 0.5);
+}
+
+.modal-content {
+    background-color: #333;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.close {
+    color: #ccc;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+}
+
+.settings-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Media queries */
+@media screen and (max-width: 1000px) {
+  .container {
+    padding: 0px;
+  }
+
+  .logo {
+    width: 102px;
+    height: 102px;
+  }
+
+  .title {
+    font-size: 27px;
+  }
+
+  .button {
+    font-size: 22px;
+    padding: 10px 30px;
+  }
+
+  .settings-button {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  /* Mengatur tombol setting untuk ukuran layar kecil */
+  .settings-button {
+    padding: 15px 15px;
+    font-size: 30px;
+  }
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 2;
+}
+
+.name-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 39px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px rgb(255, 217, 0);
+}
+
+.name-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.name-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+}
+
+.name-form .start-button {
+    padding: 10px 20px;
+    background-color: #eea700;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.name-form .start-button:hover {
+    background-color: #333;
+    color: #fff;
+}

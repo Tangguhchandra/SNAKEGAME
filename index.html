@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selamat Datang di Permainan Ular</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="TampilanAwal.css">
+</head>
+<body>
+
+<div class="container" id="gameContainer" style="display: none;">
+    <center><img src="logo.png" alt="Logo Permainan Ular" class="logo"></center>
+    <center><h1 class="title">Permainan Ular</h1>
+    <div class="button-container">
+        <a href="UlarVersi1.html" class="button">versi1</a>
+        <a href="UlarVersi2.html" class="button">versi2</a>
+        <a href="skin.html" class="button">Skinn</a> </center>
+    </div>
+    <div class="setting-container">
+        <a href="#" class="button settings-button" id="settingsButton"><i class="fas fa-cog"></i></a> 
+    </div>
+    
+        <source src="path/to/your/video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+</div>
+
+<div class="form-container" id="nameFormContainer">
+    <form id="nameForm" class="name-form">
+        <h2>Masukkan nama Anda:</h2>
+        <input type="text" id="playerName" name="playerName" required>
+        <button type="submit" class="start-button">Mulai Permainan</button>
+    </form>
+</div>
+
+<div id="settingsModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Pengaturan Suara</h2>
+        <label for="volume">Volume:</label>
+        <input type="range" id="volume" name="volume" min="0" max="100">
+        <div class="background-menu">
+            <h2>Background Options</h2>
+            <button class="background-option" id="background1">Background 1</button>
+            <button class="background-option" id="background2">Background 2</button>
+            <!-- Add more background options as needed -->
+        </div>
+    </div>
+</div>
+
+
+<audio id="backgroundAudio" hidden autoplay loop>
+    <source src="SoundSnake.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung elemen audio.
+</audio>
+
+<script>
+var settingsButton = document.getElementById('settingsButton');
+var modal = document.getElementById('settingsModal');
+var closeButton = document.querySelector('.close');
+var audio = document.querySelector('audio');
+
+settingsButton.addEventListener('click', function() {
+    modal.style.display = 'block';
+    audio.play(); 
+});
+
+closeButton.addEventListener('click', function() {
+    modal.style.display = 'none';
+});
+
+window.addEventListener('click', function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+});
+
+var volumeInput = document.getElementById('volume');
+volumeInput.addEventListener('input', function() {
+    audio.volume = this.value / 100; 
+});
+
+var nameForm = document.getElementById("nameForm");
+var nameFormContainer = document.getElementById("nameFormContainer");
+var gameContainer = document.getElementById("gameContainer");
+
+nameForm.onsubmit = function(event) {
+  event.preventDefault();
+  var playerName = document.getElementById("playerName").value;
+  alert("Selamat datang, " + playerName + "!");
+  nameFormContainer.style.display = "none";
+  gameContainer.style.display = "block";
+};
+
+// Penanganan untuk memilih latar belakang
+var backgroundOptions = document.querySelectorAll('.background-option');
+
+backgroundOptions.forEach(function(option) {
+    option.addEventListener('click', function() {
+        var backgroundId = this.id;
+        // Lakukan sesuatu dengan latar belakang yang dipilih, misalnya mengubah latar belakang permainan
+        console.log('Selected background:', backgroundId);
+    });
+});
+
+</script>
+
+</body>
+</html>
